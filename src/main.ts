@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from "electron";
+import { app, BrowserWindow, ipcMain, nativeTheme } from "electron";
 import * as path from "path";
 
 function createWindow() {
@@ -13,6 +13,8 @@ function createWindow() {
 
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, "../index.html"));
+
+  nativeTheme.themeSource = "dark";
 }
 
 // This method will be called when Electron has finished
